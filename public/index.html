@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Network monitor</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main>
+      <header class="top">
+        <div>
+          <p class="eyebrow">On this machine</p>
+          <h1>Network monitor</h1>
+          <p class="sub" id="subline">Collecting signal, traffic, and latency.</p>
+        </div>
+        <div class="live" id="live">
+          <span class="dot"></span>
+          <span id="liveText">connecting</span>
+        </div>
+      </header>
+
+      <p class="banner" id="error" hidden></p>
+
+      <section class="hero">
+        <article class="card score-card">
+          <h2>Health</h2>
+          <div class="score-wrap">
+            <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+              <circle class="ring-fg" id="ring" cx="60" cy="60" r="52"></circle>
+            </svg>
+            <div class="score-num">
+              <strong id="score">—</strong>
+              <span id="scoreLabel">reading</span>
+            </div>
+          </div>
+          <ul id="reasons"></ul>
+        </article>
+
+        <article class="card">
+          <h2>Wi-Fi</h2>
+          <p class="ssid" id="ssid">—</p>
+          <p class="meta" id="wifiMeta"></p>
+          <div class="meter" id="meterTrack"><span id="meter"></span></div>
+          <dl class="facts" id="wifiFacts"></dl>
+        </article>
+
+        <article class="card speed-card">
+          <h2>Traffic now</h2>
+          <p class="iface" id="iface"></p>
+          <div class="speed">
+            <span>Down</span>
+            <strong id="down">—</strong>
+          </div>
+          <div class="speed up">
+            <span>Up</span>
+            <strong id="up">—</strong>
+          </div>
+          <p class="fine" id="session"></p>
+        </article>
+      </section>
+
+      <section class="card story" id="story"></section>
+      <section class="latency" id="latency"></section>
+
+      <section class="card">
+        <h2>Last 15 minutes</h2>
+        <div class="chart-wrap">
+          <canvas id="chart"></canvas>
+          <div id="chartTip" class="chart-tip" hidden></div>
+        </div>
+        <ul class="chart-legend">
+          <li><i class="swatch down"></i>Download</li>
+          <li><i class="swatch up dash"></i>Upload</li>
+          <li><i class="swatch lat"></i>Latency</li>
+          <li><i class="swatch sig"></i>Signal</li>
+        </ul>
+      </section>
+
+      <section class="split">
+        <article class="card">
+          <h2>Adapters</h2>
+          <div id="adapters"></div>
+        </article>
+        <article class="card">
+          <div class="row-head">
+            <h2>Nearby networks</h2>
+            <p class="fine" id="nearbyAge"></p>
+          </div>
+          <div id="nearby"></div>
+        </article>
+      </section>
+
+      <section class="card">
+        <div class="row-head">
+          <h2>Apps with open connections</h2>
+          <p class="fine" id="procAge">Counts open TCP conversations. Throughput stays for the whole machine.</p>
+        </div>
+        <div id="procs"></div>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

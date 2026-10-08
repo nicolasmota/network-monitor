@@ -1,0 +1,11 @@
+{
+  "name": "network-monitor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local view of this machine's signal, traffic, and latency.",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  }
+}
