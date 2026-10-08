@@ -4,6 +4,8 @@ A local dashboard for the network this PC is actually on. It watches Wi-Fi signa
 
 It listens only on `127.0.0.1`. It does not change adapters, routes, or Wi-Fi settings.
 
+![Network monitor showing signal, traffic, latency, and the last 15 minutes](docs/screenshot.png)
+
 ## Run
 
 Windows, with [Node.js](https://nodejs.org/) installed.
